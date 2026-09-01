@@ -34,6 +34,14 @@ Mesa GBM (Generic Buffer Manager) backend implementation for Qualcomm
 MSM platforms. Provides hardware-accelerated buffer allocation for
 Adreno GPUs via the GBM backend ABI.
 
+%package devel
+Summary:        Development header for %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+
+%description devel
+Header file for building software against the Mesa GBM backend for
+Qualcomm MSM/Adreno platforms.
+
 %prep
 %autosetup -n %{name}-%{version} -p1
 
@@ -43,12 +51,16 @@ Adreno GPUs via the GBM backend ABI.
 
 %install
 %meson_install
+install -Dm644 src/gbm_msm.h %{buildroot}%{_includedir}/gbm_msm.h
 
 %files
 %license LICENSE
 %{_libdir}/gbm/msm_gbm.so
 %{_libdir}/gbm/default_fmt_alignment.xml
 
+%files devel
+%{_includedir}/gbm_msm.h
+
 %changelog
 * Thu Aug 20 2026 Qualcomm Linux <noreply@qualcomm.com> - 1.2.6-1
-- Rewritten spec targeting CentOS Stream 10 aarch64 (replaces OE-generated spec)
+- Initial RPM packaging of gbm-msm-backend
