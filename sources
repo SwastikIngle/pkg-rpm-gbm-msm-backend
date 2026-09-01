@@ -19,4 +19,4 @@
 # lookaside cache by this checksum; on a miss it downloads the matching
 # Source URL from your spec, verifies this checksum, and caches it back.
 #
-SHA512 (mypackage-1.0.tar.gz) = REPLACE_ME_WITH_THE_REAL_SHA512_OF_YOUR_TARBALL
+SHA512 (msm-gbm-backend-1.2.6.tar.gz) = 394a688937a9e84603083877e3b125fb7d0a568c4e49bf94613791bfbea461a6a9b19c0815e108bdf40e464570fe63f493b59172dfd96b0b1479bc05cb30f328 

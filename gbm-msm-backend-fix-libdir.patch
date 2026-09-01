@@ -1,0 +1,23 @@
+--- a/meson.build
++++ b/meson.build
+@@ -17,8 +17,7 @@
+ gbm = dependency('gbm', version : ['>=21.2'])
+ dep_libxml2 = dependency('libxml-2.0')
+ 
+-arch = run_command('dpkg-architecture', '-qDEB_HOST_MULTIARCH').stdout().strip()
+-libdir = '/usr/lib' + (arch != '' ? '/' + arch : '')
++libdir = get_option('prefix') / get_option('libdir')
+ 
+ c_args = ['-DLIBDIR="' + libdir + '"']
+ subdir('src')
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -36,3 +36,8 @@
+     name_prefix: '',
+     c_args: c_args,
+ )
++
++install_data(
++    'default_fmt_alignment.xml',
++    install_dir: libdir / 'gbm',
++)
