@@ -99,7 +99,6 @@ git:
 
 ## License
 
-The RPM packaging files in this repository are licensed under the BSD 3-Clause
-License. See [LICENSE.txt](LICENSE.txt) for the complete license text.
+This project is licensed under the BSD 3-Clause License. See [LICENSE.txt](LICENSE.txt) for the complete license text.
 The upstream GBM MSM backend is licensed separately under
-`BSD-3-Clause-Clear`, as declared in `gbm-msm-backend.spec`.
+`BSD-3-Clause`, as declared in `gbm-msm-backend.spec`.
