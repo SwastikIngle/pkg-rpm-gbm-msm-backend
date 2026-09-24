@@ -10,6 +10,8 @@ Source0:        https://github.com/qualcomm-linux/gbm-msm-backend/archive/refs/t
 # Upstream meson.build shells out to Debian's dpkg-architecture to compute
 # the install libdir, which doesn't exist on RPM-based distros. Use Meson's
 # own prefix/libdir options instead.
+# Temporary workaround for RPM packaging.
+# Remove once upstream Meson files are updated.
 Patch0:         gbm-msm-backend-fix-libdir.patch
 
 BuildRequires:  gcc

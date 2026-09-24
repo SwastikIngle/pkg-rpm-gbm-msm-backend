@@ -1,3 +1,17 @@
+# Temporary RPM/CentOS build compatibility fix.
+#
+# Upstream meson.build uses Debian's dpkg-architecture utility to determine
+# the library installation directory. That utility is not available in the
+# CentOS Stream RPM build environment.
+#
+# Use Meson's standard prefix/libdir options instead, which resolves to
+# /usr/lib64 on CentOS Stream aarch64. Also install
+# default_fmt_alignment.xml in the GBM backend directory so it is included
+# in the runtime RPM.
+#
+# This is a temporary packaging workaround. The upstream meson.build files
+# should be updated directly in a future source revision.
+
 --- a/meson.build
 +++ b/meson.build
 @@ -17,8 +17,7 @@
