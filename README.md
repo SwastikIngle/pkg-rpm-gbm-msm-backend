@@ -16,18 +16,6 @@ software that needs to compile against the backend.
 The package is maintained on the CentOS Stream 10 (`c10s`) branch and uses the
 shared GitHub Actions build and release workflow.
 
-## CI Workflows
-
-| Workflow | Trigger | Purpose |
-|---|---|---|
-| [`build-on-pr.yml`](.github/workflows/build-on-pr.yml) | Pull request | Builds the RPMs so reviewers can verify the package still builds. Read-only — never publishes. |
-| [`pkg-release.yml`](.github/workflows/pkg-release.yml) | Manual (`workflow_dispatch`) | Build and publish the RPM(s) to Artifactory, behind an approval gate. |
-
-The GitHub Actions workflows use the shared
-[`qcom-rpm-utils`](https://github.com/qualcomm-linux/qcom-rpm-utils) build
-environment. They run `rpmbuild` inside the prebuilt `rpm-builder` container
-image for the runner's host architecture.
-
 ---
 
 ## Repository layout
